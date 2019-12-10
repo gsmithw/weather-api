@@ -31,7 +31,7 @@ function gettingJSON(){
 	if (c == ""){c = "Ann Arbor"};
 	var u = $("input[name=temp]:checked").attr("id");
 	if (!u){u="fahrenheit"};
-	let query = "http://api.openweathermap.org/data/2.5/weather?q="+c+"&APPID=0e5ca923c3224ad8fd22fab123d40b52";
+	let query = "https://api.openweathermap.org/data/2.5/weather?q="+c+"&APPID=0e5ca923c3224ad8fd22fab123d40b52";
 	$.ajax({
 			url: query,
 			dataType: 'json',
@@ -40,7 +40,7 @@ function gettingJSON(){
 			var min_temp = result.main.temp_min - 273.16;
 			var max_temp = result.main.temp_max - 273.16;
 			var icon_id = result.weather[0].icon;
-			var icon_url = "http://openweathermap.org/img/wn/"+icon_id+"@2x.png";
+			var icon_url = "https://openweathermap.org/img/wn/"+icon_id+"@2x.png";
 			console.log(icon_url);
 			if (u=="fahrenheit"){
 				temp = (temp*9/5 + 32);
